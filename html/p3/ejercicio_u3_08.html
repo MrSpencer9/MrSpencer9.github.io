@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+    Nombre: Ari Maximiliano Muñiz Moncada
+    Materia: Programacion Web 1
+    Fecha: /5/23
+    Descripción:
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .Tit{ background-color: black; color:aqua;}
+        </style>
+    </head>
+    <body onload="confirm('Para poder acceder debes aceptar las cookies del sitio...')">
+        <h1 class="Tit">JavaScript - Funciones & Eventos</h1>
+        <h2>JavaScript contenido en una etiqueta</h2>
+        <button onclick="document.body.style.backgroundColor = 'lightblue';" ondblclick="document.body.style.backgroundColor = 'lightgreen';">Cambia color de fondo....</button>
+        <h2>JavaScript contenido en una función</h2>
+        <button id="btnColor">Cambia color</button>
+        <button id="btnSaludar">Saludar</button>
+        <script>
+            /*Modo básico*/
+            let button = document.getElementById("btnColor");
+            function funColor_A(){
+                document.body.style.backgroundColor = 'lavender';
+            }
+            function funColor_B(){
+                document.body.style.backgroundColor = 'pink';
+            }
+            button.addEventListener('click', funColor_A);
+            button.addEventListener('click', funColor_B);
+            /*Modo avanzado/optimizado*/
+            document.getElementById("btnSaludar").addEventListener('click', () =>{
+                alert("Hola a todos!!!\nTengan un buen dia....\n :) :) :) :)");
+            });
+        </script>
+        <h2>Eventos del mouse</h2>
+        <p style="background-color: aquamarine;" onmouseover="alert('Presionaste el parrafo.....');">
+            Puedes pasar por encima del parrafo, salir del parrafo..... <br>
+            O hacer click sobre el párrafo....
+        </p>
+    </body>
+</html>
