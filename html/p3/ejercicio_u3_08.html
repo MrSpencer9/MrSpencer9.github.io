@@ -42,5 +42,25 @@
             Puedes pasar por encima del parrafo, salir del parrafo..... <br>
             O hacer click sobre el párrafo....
         </p>
+        <h2>Geolocalización</h2>
+        <button onclick="getLocation()">Obtener coordenadas</button>
+        <p id="data"></p>
+        <p id="map"></p>
+        <script>
+            function getLocation(){
+                if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(showPosition);}
+                else {alert("Geolocalización no soportada por el navegador.....");}
+            }
+            function showPosition(){
+                document.getElementById("data").innerHTML = "Latitud: " + position.coords.latitude;
+                document.getElementById("data").innerHTML += "<b>Longitud: " + position.coords.latitude;
+                var lation = position.coords.latitude + "," + position.coords.longitude;
+                lation = '22.121929, -100.984327';//Posicion de la UPSLP
+                var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg";
+                document.getElementById("map").innerHTML = "<img src= '" + img_url + "'>";
+            }
+        </script>
+        <h2>Google Maps</h2>
+        <iframe src="https://www.google.com.mx/maps/place/Universidad+Polit%C3%A9cnica+de+San+Luis+Potos%C3%AD/@22.1223573,-100.9945532,15z/data=!3m1!4b1!4m6!3m5!1s0x842a9f5412c6b56f:0xe1b3dea4c6aa1c03!8m2!3d22.1223377!4d-100.9842534!16s%2Fm%2F04y9g6q" width="600" height="450" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </body>
 </html>
